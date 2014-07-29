@@ -1,0 +1,7 @@
+from django.conf.urls import patterns, url, include
+
+
+urlpatterns = patterns('apps.producto.views',
+	url(r'^lista/$', 'view_lista', name='lista'),
+	(r'^ajax_color_request/$', 'ajax_color_request'),
+	)

@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block title %} Editando datos del personal {% endblock %}
+{% block content %}
+<div class="hero-unit">
+<h4>{{msg}}</h4>
+<form method="POST">
+{% csrf_token %}
+{{formuser.as_p}}
+{{formperfil.as_p}}
+<button class="btn btn-large btn-primary" type="submit">Actualizar</button>
+</form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% block title %}Lista de producto{% endblock %}
+
+{% block content %}
+<div class="hero-unit">
+
+ <a href="{% url 'agregar_producto' %}">
+<button class="btn btn-primary">
+	Agregar nuevo
+</button>
+</a>
+
+<br>
+<br>
+<br>
+{% for p in lista %}
+    {# Each "p" is a Contact model object. #}
+    {{ p.nombre|upper }}
+ <a href="{% url 'editar_producto' p.id %}">Actualizar</a>
+ <a href="{% url 'eliminar_producto' p.id %}">Eliminar</a>
+<br>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if lista.has_previous %}
+            <a href="?page={{ lista.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Pagina {{ lista.number }} hasta {{ lista.paginator.num_pages }}.
+        </span>
+
+        {% if lista.has_next %}
+            <a href="?page={{ lista.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+{% endblock %}

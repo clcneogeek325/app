@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <link href="/static/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/bootstrap-datetimepicker.min.css">
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-datetimepicker.js"></script> 
+  </head>
+  <body>
+	  
+<div class="container">
+    Datetimepicker: 
+    <div class="well">
+      <div id="datetimepicker" class="input-append date">
+        <form method="POST">
+        <input data-format="dd/MM/yyyy" type="text"></input>
+        <span class="add-on glyphicon glyphicon-time">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+          </i>
+        </span>
+        </form>
+      </div>
+     
+    </div>
+    <script type="text/javascript">
+      $(function(){
+        $('#datetimepicker').datetimepicker({
+          
+        });
+      });
+    </script>
+
+</div>
+    
+</body>
+</html>

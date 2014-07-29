@@ -1,0 +1,16 @@
+{% if user.is_authenticated %}
+	<h1>
+		Hola Como estas {{user.first_name}} {{user.last_name}}
+	</h1>
+	<p><a href="/add/user">Agregar un nuevo usuario<a/></p>
+	{% for u in lista %}
+		<p> Nombre De Usuario : {{u.username}} </p> <p>Nombres: {{u.first_name}}</p> <p> Apellidos: {{u.last_name}} <a href="/del/user/{{ u.id}}">Eliminar<a/> <a href="#">Actualizar<a/></p>
+
+	{% endfor %}
+	<a href="/logout">Cerra Cesion</a>
+{% else %}
+	<h1>Usten no ha iniciado sesion</h1>
+	<a href="/login">Iniciar Cesion</a>
+{% endif %}
+
+

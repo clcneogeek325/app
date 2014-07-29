@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block title %} Lista del Personal{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+	<h1>
+		Hola Como estas {{user.first_name}} {{user.last_name}}
+	</h1>
+	<p>
+		<a href="{% url 'vista_agregar_usuario'%}">
+			<button class="btn btn-primary">
+				Agregar Usuario
+			</button>
+		</a>
+	</p>
+
+{% for u in lista %}
+	<p> Nombre De Usuario : {{u.username}} </p>
+	<p>Nombres: {{u.first_name}}</p>
+	<p> Apellidos: {{u.last_name}} <br>
+		 
+		 <a href="/del/user/{{ u.id}}"> 
+			Eliminar
+		</a>
+
+		<a href="/edit/user/{{u.id}}">
+			Actualizar
+		</a>
+	</p>
+	<br><br>
+
+{% endfor %}
+{% else %}
+	<h1>Usten no ha iniciado sesion</h1>
+	<a href="/login"><button>Iniciar Cesion</button></a>
+{% endif %}
+
+{% endblock %}

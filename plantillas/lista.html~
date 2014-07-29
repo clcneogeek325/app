@@ -1,0 +1,20 @@
+{% for p in lista %}
+    {# Each "p" is a Contact model object. #}
+    {{ p.nombre|upper }}<br />
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if lista.has_previous %}
+            <a href="?page={{ lista.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Pagina {{ lista.number }} hasta {{ lista.paginator.num_pages }}.
+        </span>
+
+        {% if lista.has_next %}
+            <a href="?page={{ lista.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>

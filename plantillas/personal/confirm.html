@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block title %} Cofirmacion {% endblock %}
+
+{% block content %}
+<div class="hero-unit">
+<h4>{{msg}}</h4>
+
+<a href="/"> 
+<button class="btn btn-large btn-success">No</button>
+</a>
+
+<form method="POST">
+{%csrf_token%}
+<button class="btn btn-large btn-danger" type="submit">Si</button>
+</form>
+</div>
+{% endblock %}

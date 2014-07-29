@@ -1,0 +1,7 @@
+copiar el proyecto a /var/www/
+
+copiar el aprchivo    app.conf a /etc/apache2/sites-aviable/
+
+agregar "WSGIPythonPath rutadelproyeto1:rutadelproyeto2" 
+en el archivo /etc/apache2/mod-aviable/wsgi.load
+

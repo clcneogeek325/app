@@ -1,0 +1,9 @@
+<form method="POST">
+{% csrf_token %}
+<p>Nombre usuario: {{form.username}}</p>
+<p>Nombres : {{form.first_name}}</p>
+<p>Apellidos : {{form.last_name}}</p>
+<p>Email : {{form.email}}</p>
+<input type="submit"value="actualizar"></input>
+</form>
+

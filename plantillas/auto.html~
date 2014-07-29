@@ -1,0 +1,12 @@
+<html>
+<head>
+	<title>Ejemplo ajax</title>
+	<script src="static/js/my_ajax_function.js"></script>
+	<script src="static/js/jquery.min.js"></script>
+</head>
+<body>
+	{%csrf_token%}
+	{{form.as_p}}
+</body>
+</html>
+

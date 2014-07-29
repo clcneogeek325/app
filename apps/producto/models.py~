@@ -1,0 +1,17 @@
+from django.db import models
+
+class producto(models.Model):
+	nombre  = models.CharField(max_length=50)
+	status  = models.BooleanField(default=True)
+
+	def __unicode__(self):
+		return self.nombre
+
+
+class Color(models.Model):
+    color = models.CharField(max_length=256)
+
+class Auto(models.Model):
+    type = models.CharField('auto type', max_length=256)
+    colors = models.ManyToManyField(Color)
+
